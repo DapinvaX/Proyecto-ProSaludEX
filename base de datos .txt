@@ -1,0 +1,67 @@
+doctor (provisional)
+
+id
+dni
+nombre
+ape_1
+ape_2
+
+
+-> relacion (un medico tiene 1:m pacientes pero 1 paciente tiene 1 (1:1) solo medico)
+
+
+paciente
+
+id
+num_SS
+nombre 
+ape_1
+ape_2
+f_nacimiento
+sexo
+direccion
+telefono
+
+
+-> relacion (paciente tiene de 1:m patologias
+
+
+patologia
+id
+nom_patologia
+descrip_pat
+
+
+->relacion (1 paciente tiene 1:m citas)
+
+
+cita
+
+id
+f_cita
+
+
+usuario 
+id
+nom_usuario
+password
+pregunta
+respuesta
+
+-> relacion (1 medico o 1 paciente tiene 1 usuario 1:1)
+
+conexion a bbdd
+
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="";
+$dbname="";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+	or die ('Could not connect to the database server' . mysqli_connect_error());
+
+//$con->close();
+
+

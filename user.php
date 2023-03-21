@@ -3,10 +3,6 @@
 
 <head>
   <title>Inicio</title>
-
-  <!-- Favicon (icono de pestaña) -->
-  <link rel="shortcut icon" href="./images/ritmo-cardiaco.png">  
-
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,46 +37,8 @@
             <form class="form-inline">
                 <div class="input-group">
                 <input type="text" class="form-control rounded border-info text-center" id="inlineFormInputGroup"> <script>//Input de fecha deshabilitadoS</script>
-                <div class="input-group-prepend"><input type="date" name="calendarioCita" id="calendarioCita" class="mx-2 rounded border border-info text-center" ></div>
-                
-                <select id="selectCita" class="btn btn-info rounded" onchange="actualizarCalendario()">
-                    <option value="1" selected>Consultar Cita</option>
-                    <option value="2">Pedir Cita</option>
-                </select>
-
-                <div class="input-group-append"><button class="btn btn-info rounded" id="btnSubmit" type="submit" style="margin-left: 10px;">Consultar Cita<i class="fa fa-search"></i></button>
-
-                </div>
-                
-                
-                <script>
-
-                    function actualizarCalendario() {
-                        var tipoCita = document.getElementById("selectCita").value;
-                        var calendarioCita = document.getElementById("calendarioCita");
-                        var boton = document.getElementById("btnSubmit");
-                                   
-                            //Pedir Cita
-                            if (tipoCita === "2") {
-                                calendarioCita.type="datetime-local";
-                               boton.innerHTML="Pedir Cita"
-                               console.log("Boton:"+boton.value)
-                                console.log("Pedir Cita")
-                                        
-                            //Consultar Cita
-                            } else {
-                                calendarioCita.type="date";
-                                boton.innerHTML="Consultar Cita"
-                                console.log("Boton:"+boton.value)
-                                console.log("Consultar Cita")
-
-                            };
-                            console.log(tipoCita)
-                        }
-
-                </script>
-
-                <!-- <script>window.onload = function(){
+                <div class="input-group-prepend"><input type="date" name="f_cita" id="f_cita" class="mx-2 rounded border border-info text-center" ></div>
+                <script>window.onload = function(){
                     var fecha = new Date(); //Fecha actual
                     var mes = fecha.getMonth()+1; //Obtenemos el mes
                     var dia = fecha.getDate(); //Obtenemos el dia
@@ -106,9 +64,14 @@
                         case 12:mesLetra  == "Diciembre"
                     }
                     document.getElementById('f_cita').value=anio+"-"+mesLetra+"-"+dia;
-                }</script>  -->
+                }</script>
+                <select id="selectCita" class="btn btn-info rounded">
+                    <option value="1" selected>Consultar Cita</option>
+                    <option value="2">Pedir Cita</option>
+                </select>
+                <div class="input-group-append"><button class="btn btn-info rounded" type="button" style="margin-left: 10px;">Aceptar<i class="fa fa-search"></i></button>
 
-                
+                </div>
                 </div>
             </form>
             </div>

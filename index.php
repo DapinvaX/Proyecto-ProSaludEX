@@ -12,6 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body style="width: 100%; background-image: url(https://image.freepik.com/foto-gratis/fondo-abstracto-degradado-azul-turquesa_8087-3920.jpg);	background-position: right bottom;	background-size: cover;	background-repeat: repeat; background-attachment: fixed;"class="">
@@ -20,106 +25,51 @@
     <?php 
         include("navbar.html")
     ?>
-
-    <div class="container" style="width: 100%;min-width: 100%;max-width: 100%;">
-        <div class="row">
-        <div class="col-xs- col-sm- col-md- col-lg-">
-        </div>
-        </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
-    <div class="py-5 text-center">
+    <div id="divSuperior" class="py-5 text-center">
         <div class="container">
         </div>
     </div>
-    <div class="py-5 text-center text-md-right">
-        <div class="container">
-        <div class="row">
-            <div class="p-5 mx-auto mx-md-0 ml-md-auto col-10 col-md-9">
-            <form class="form-inline">
-                <div class="input-group">
-                <input type="text" class="form-control rounded border-info text-center" id="inlineFormInputGroup"> <script>//Input de fecha deshabilitadoS</script>
-                <div class="input-group-prepend"><input type="date" name="calendarioCita" id="calendarioCita" class="mx-2 rounded border border-info text-center" ></div>
+    <div id="divCentral" class="py-5 text-center">
+                    
+                    
+
+                    <!-- Imagenes Carrusel 
                 
-                <select id="selectCita" class="btn btn-info rounded" onchange="actualizarCalendario()">
-                    <option value="1" selected>Consultar Cita</option>
-                    <option value="2">Pedir Cita</option>
-                </select>
+                        <img src="https://www.seguroscatalanaoccidente.com/content/published/api/v1.1/assets/CONTF7BB24B718C4411AA895371974E15C10/Large?cb=_cache_e3ac&channelToken=219555cd30b54b3bbf0d0d28addf8e10&format=webp" alt="1">
+                        <img src="https://www.prosalud.org/imagen/noticias/b55b46e98056859f17b2fe7b996d8459.jpg" alt="2">
+                        <img src="https://www.todoparaellas.com/u/fotografias/m/2020/10/31/f800x450-327_51773_5050.jpeg" alt="3">
+                -->
 
-                <div class="input-group-append"><button class="btn btn-info rounded" id="btnSubmit" type="submit" style="margin-left: 10px;">Consultar Cita<i class="fa fa-search"></i></button>
-
-                </div>
+                        <!-- Carrusel de ímagenes -->  
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade" style="width: 100%;">
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                <img src="https://www.prosalud.org/imagen/noticias/b55b46e98056859f17b2fe7b996d8459.jpg" width="100%" alt="1">
+                                </div>
+                                <div class="carousel-item active">
+                                <img src="https://www.todoparaellas.com/u/fotografias/m/2020/10/31/f800x450-327_51773_5050.jpeg" width="100%" alt="1">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="https://www.clarin.com/img/2022/05/17/9Y-zuZRjQ_1256x620__1.jpg" width="100%" alt="1">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>              
                 
-                
-                <script>
+    </div>   
+   
 
-                    function actualizarCalendario() {
-                        var tipoCita = document.getElementById("selectCita").value;
-                        var calendarioCita = document.getElementById("calendarioCita");
-                        var boton = document.getElementById("btnSubmit");
-                                   
-                            //Pedir Cita
-                            if (tipoCita === "2") {
-                                calendarioCita.type="datetime-local";
-                               boton.innerHTML="Pedir Cita"
-                               console.log("Boton:"+boton.value)
-                                console.log("Pedir Cita")
-                                        
-                            //Consultar Cita
-                            } else {
-                                calendarioCita.type="date";
-                                boton.innerHTML="Consultar Cita"
-                                console.log("Boton:"+boton.value)
-                                console.log("Consultar Cita")
 
-                            };
-                            console.log(tipoCita)
-                        }
-
-                </script>
-
-                <!-- <script>window.onload = function(){
-                    var fecha = new Date(); //Fecha actual
-                    var mes = fecha.getMonth()+1; //Obtenemos el mes
-                    var dia = fecha.getDate(); //Obtenemos el dia
-                    var anio = fecha.getFullYear(); //Obtenemos el año
-                    if(dia<10)
-                    dia='0'+dia; //Agrega un cero si tiene una sola cifra
-                    if(mes<10)
-                    mes='0'+mes //Agrega un cero si tiene una sola cifra
-
-                    var mesLetra="";
-                    switch(mes){
-                        case 1: mesLetra  == "Enero";
-                        case 2: mesLetra  == "Febrero";
-                        case 3: mesLetra  == "Marzo";
-                        case 4:mesLetra   == "Abril";
-                        case 5:mesLetra   == "Mayo";
-                        case 6:mesLetra   == "Junio";
-                        case 7:mesLetra   == "Julio";
-                        case 8:mesLetra   == "Agosto";
-                        case 9:mesLetra   == "Septiembre";
-                        case 10:mesLetra  == "Octubre";
-                        case 11:mesLetra  == "Noviembre";
-                        case 12:mesLetra  == "Diciembre"
-                    }
-                    document.getElementById('f_cita').value=anio+"-"+mesLetra+"-"+dia;
-                }</script>  -->
-
-                
-                </div>
-            </form>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="py-5 text-center">
-        <div class="container">
-        </div>
-    </div>
-    <div class="py-5 text-center">
+    
+    <div id="divInferior" class="py-5 text-center">
         <div class="container">
         </div>
     </div>

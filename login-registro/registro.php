@@ -48,7 +48,7 @@ include_once "../php/connection/connection.php"
                 -->
 
                         <!-- Carrusel de ímagenes -->  
-                        <div id="carouselExampleFade" class="carousel slide carousel-fade" style="width: 100%;">
+                      <!--   <div id="carouselExampleFade" class="carousel slide carousel-fade" style="width: 100%;">
                             <div class="carousel-inner">
                                 <div class="carousel-item">
                                 <img src="https://www.prosalud.org/imagen/noticias/b55b46e98056859f17b2fe7b996d8459.jpg" width="100%" alt="1">
@@ -68,12 +68,12 @@ include_once "../php/connection/connection.php"
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
-                        </div>     
+                        </div>      -->
                         
                        <!-- Formularios de inicio sesión y registrar -->
                        <div class="container">
     <div class="row">
-        <div class="col-md-6">
+       <!--  <div class="col-md-6">
             <h2>Iniciar sesión</h2>
             <form id="login-form" method="post" action="login.php">
                 <div class="form-group">
@@ -86,7 +86,8 @@ include_once "../php/connection/connection.php"
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar sesión</button>
             </form>
-        </div>
+        </div> -->
+        <div class="col-md-3"></div>
         <div class="col-md-6">
             <h2>Registro de usuario</h2>
             <form id="register-form" method="post" action="register.php">
@@ -106,15 +107,16 @@ include_once "../php/connection/connection.php"
                     <label for="password">Contraseña</label>
                     <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
                 </div>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn btn-info">Registrarse</button>
             </form>
         </div>
+        <div class="col-md-3"></div>
     </div>
 </div>
 <script>
 
     $(document).ready(function() {
-        // Oculta el formulario de registro de usuario al cargar la página
+      /*   // Oculta el formulario de registro de usuario al cargar la página
         $('#register-form').hide();
 
         // Cuando se hace clic en el botón de "Registro de usuario", muestra el formulario de registro y oculta el formulario de inicio de sesión
@@ -141,7 +143,7 @@ include_once "../php/connection/connection.php"
                     // Si la autenticación falla, muestra un mensaje de error
                 }
             });
-        });
+        }); */
 
         // Envía los datos del formulario de registro de usuario utilizando AJAX
         $('#register-form').submit(function(e) {
